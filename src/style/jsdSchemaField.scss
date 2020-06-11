@@ -1,0 +1,46 @@
+@import "./base.scss";
+
+.jsdSchemaField {
+  // display: inline-flex;
+  display: flex;
+  flex: 1 0 80px;
+
+  align-items: center;
+  padding: 2px;
+  background-color: #eee;
+  background: linear-gradient(90deg, #fafafa, #eee);
+  border-radius: 4px;
+  margin: 2px;
+  margin-top: 0;
+
+  &_title {
+    font-size: 13px;
+    margin: 0 4px;
+    color: #666;
+    white-space: nowrap;
+  }
+
+  &_remove {
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    margin: auto 2px;
+
+    &:hover {
+      background-color: #f88;
+      color: #fff;
+      border-radius: 4px;
+    }
+  }
+
+  &_valueText {
+    font-size: 13px;
+  }
+
+  &_input {
+    @include jsdBoxInput;
+    flex-grow: 1;
+  }
+}

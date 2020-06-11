@@ -1,0 +1,44 @@
+@import "./base.scss";
+
+.jsdProperties {
+  &_actions {
+    white-space: nowrap;
+    display: flex;
+    margin: 0 6px;
+  }
+
+  &_leading {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  border: 1px solid #ccc;
+  border-bottom-width: 0;
+  &_item {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    background-color: #fff;
+    &:nth-child(odd) {
+      background-color: #fafafa;
+    }
+  }
+
+  &_item > .jsdItem_extra {
+    margin-left: $jsdIndentWidth;
+  }
+
+  &_propName {
+    align-self: flex-start;
+    width: 160px;
+    @include jsdBoxInput;
+    // @include jsdMonospace;
+  }
+
+  &_item__ghost &_propName {
+    background-color: transparent;
+    &::placeholder {
+      color: #999;
+    }
+  }
+}

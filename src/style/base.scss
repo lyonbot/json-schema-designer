@@ -1,0 +1,19 @@
+$jsdIndentWidth: 20px;
+
+@mixin jsdMonospace {
+  font-family: "Courier New", Courier, monospace;
+}
+
+@mixin jsdBoxInput {
+  border: 1px solid #eee;
+  padding: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  vertical-align: top;
+  border-radius: 4px;
+  color: #333;
+  &:hover,
+  &:focus {
+    border: 1px solid #999;
+  }
+}

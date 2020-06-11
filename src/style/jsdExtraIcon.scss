@@ -1,0 +1,9 @@
+@import "./base.scss";
+
+.jsdExtraIcon {
+  @include jsdMonospace;
+  font-weight: bold;
+  line-height: 22px;
+  color: #999;
+  display: inline-block;
+}

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES6",
+    "outDir": "dist",
+    "baseUrl": "src",
+    "declaration": true,
+  },
+  "include": [
+    "./shim.d.ts",
+    "./src/**/*.ts"
+  ]
+}

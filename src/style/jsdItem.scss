@@ -1,0 +1,52 @@
+@import "./base.scss";
+
+.jsdItem {
+  flex-grow: 1;
+
+  &_basic {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &_extra {
+    margin-top: 8px;
+    padding-left: $jsdIndentWidth;
+
+    > .jsdExtraIcon {
+      width: 100%;
+      position: relative;
+      left: -$jsdIndentWidth;
+      cursor: pointer;
+    }
+
+    &__collapsed {
+      cursor: pointer;
+      display: flex;
+      align-content: center;
+      padding-left: 0;
+
+      .jsdExtraIcon {
+        display: inline-block;
+        width: auto;
+        position: static;
+      }
+
+      &_text {
+        font-size: 13px;
+        line-height: 24px;
+        color: #666;
+        @include jsdMonospace;
+      }
+
+      &:hover &_text {
+        color: #339;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &_typeSelect {
+    @include jsdBoxInput;
+    margin-right: 8px;
+  }
+}

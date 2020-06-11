@@ -1,0 +1,30 @@
+@import "./base.scss";
+
+.jsdItemOpts {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  &_formatSelect {
+    @include jsdBoxInput;
+    vertical-align: top;
+    width: 100px;
+    margin-right: 8px;
+  }
+
+  &_add {
+    width: 70px;
+    @include jsdBoxInput;
+    vertical-align: top;
+    border-color: transparent;
+    color: #999;
+    cursor: pointer;
+  }
+
+  &_schemaFieldList {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: wrap;
+  }
+}
