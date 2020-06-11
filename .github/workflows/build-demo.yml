@@ -1,0 +1,32 @@
+name: Build Demo
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_BRANCH: gh-pages
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup NodeJS
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - run: npm ci
+      - run: |
+          touch .nojekyll
+          echo node_modules >.gitignore
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -am "Add changes"
+      - name: Update ${{ env.DEPLOY_BRANCH }}
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          branch: ${{ env.DEPLOY_BRANCH }}
+          force: true
+          directory: "."
