@@ -1,6 +1,1 @@
-dist/
-node_modules/
-*.log
-yarn.lock
-.vscode/
-.DS_Store
+node_modules
