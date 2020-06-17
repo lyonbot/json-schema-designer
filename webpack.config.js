@@ -1,6 +1,5 @@
 /* eslint-ignore */
 
-const { CheckerPlugin } = require('awesome-typescript-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const webpack = require('webpack')
 const path = require('path')
@@ -50,7 +49,7 @@ const config = {
     rules: [
       { // TS
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
+        loader: 'ts-loader'
       },
       // { // FILE
       //   test: /\.(png|jpg|gif|ttf|woff2?|otf)$/,
@@ -93,7 +92,6 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': isDevelopment ? '"development"' : '"production"',
     }),
-    new CheckerPlugin(),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'style.css'

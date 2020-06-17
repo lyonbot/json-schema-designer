@@ -5,6 +5,7 @@
     "outDir": "dist",
     "baseUrl": "src",
     "declaration": true,
+    "sourceMap": true,
   },
   "include": [
     "./shim.d.ts",
